@@ -16,7 +16,7 @@
 		<form role="form" method="GET">
 		  <div class="form-group">
 			<label for="tem">Current temperature:</label>
-			<input type="text" class="form-control" name="temp" id="temp" value="20">
+			<input onchange="checknum(this.value)" type="text" class="form-control" name="temp" id="temp" value="20">
 		  </div><br>
 		  <div class="form-group">
 			<label for="tem">Unit:</label>
@@ -33,11 +33,7 @@
 	</div>
 	
 	<script>
-	    $(document).ready(function(){
-			$("button").click(function(){
-			   var t = $('#temp').val();//celsius
-			   var u = $('#unit').val();
-			   
+		function checknum(t){
 			   if(isNaN(t)){
 					msg = "Please verify whether the temperature value is correct!!!";
 					alert(msg);
@@ -48,7 +44,14 @@
 					alert(msg);
 					return;
 			   }
+
+		}
+	    $(document).ready(function(){
+			$("button").click(function(){
+			   var t = $('#temp').val();//celsius
+			   var u = $('#unit').val();
 			   
+
 			   var t1;
 			   var u1;
 			   
