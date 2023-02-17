@@ -26,7 +26,7 @@
 			  <option value="R">Réaumur</option>
 			</select>
 		  </div>
-		  <br><button type="button" class="btn btn-primary">Convert</button>
+		  <br><button type="button" class="btn btn-primary" onclick="showresult()">Convert</button>
 		</form>
 	</div>
 	<div id="result" style="margin-top:10px;margin-left:10px; font-size: 20px; color:red;">
@@ -46,8 +46,7 @@
 			   }
 
 		}
-	    $(document).ready(function(){
-			$("button").click(function(){
+		function showresult(){
 			   var t = $('#temp').val();//celsius
 			   var u = $('#unit').val();
 			   
@@ -67,8 +66,7 @@
 			   }
 			   
 			   alert("Temperature is "+t1+" in "+u1);
-			});
-		});
+			};
 	</script>
 </body>
 </html>
